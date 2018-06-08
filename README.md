@@ -20,7 +20,7 @@ hidusbf to install non patched driver http://www.overclock.net/attachments/45829
 
 # Install
 ## eXtract
-Unzip files from MAIN folder to some place. I will use "C:\Program Files\SweetLow"
+Unzip files from MAIN folder to "C:\Program Files\SweetLow"
 
 ![N|Solid](https://lh3.googleusercontent.com/-aYz796WNAqk/WwFjGJ5EwZI/AAAAAAAAVmQ/Se8QIPd4snsHYrmnUK5C2mrgYJvCG9fzwCHMYCw/s0/explorer_2018-05-20_14-59-17.png)
 
@@ -41,31 +41,21 @@ Open device manager mouse properties
 
 My ID is VID_093A
 
-## Install patch
-We need to patch driver on every windows boot. Open task scheduler and create new task
+## Restore original driver & setup 1000hz 
+Run EXTRA\Setup.exe. Check filter on device + rates. Press Install, restart , close.
 
-![N|Solid](https://lh3.googleusercontent.com/-mKbJLDfSrJY/WwFniwfbWTI/AAAAAAAAVm0/VdRGtKjGcBIHsSbxM5nfI7LuyntmcVbogCHMYCw/s0/mmc_2018-05-20_15-18-16.png)
+![N|Solid](https://lh3.googleusercontent.com/-WWuhlwyKfaw/WwFnHOKY1VI/AAAAAAAAVmo/13iLo6kUBecCL9QtZ8fTL9SN3FQCRnDKgCHMYCw/s0/Setup_2018-05-20_15-16-26.png)
 
-![N|Solid](https://lh3.googleusercontent.com/-LiCHf2j1dHg/WwFnk3AJSPI/AAAAAAAAVm4/1H37l51jaLw6801GRANr2zakFnUJj3t0gCHMYCw/s0/mmc_2018-05-20_15-18-25.png)
+## Install patch driver
+We need to patch driver on every windows boot. Open task scheduler and import tasks (Actions -> Import) MouseOC_1.xml and MouseOC_2.xml
+(C:\Program Files\atsiv\MouseOC_1.xml)
 
-![N|Solid](https://lh3.googleusercontent.com/-EzSr1CdvnT0/WwFnr6F0kvI/AAAAAAAAVm8/KdO8RffxnmogZP0dRkTJPeKKz_R-7lPsQCHMYCw/s0/mmc_2018-05-20_15-18-53.png)
-
-First entry
-```sh
-"C:\Program Files\SweetLow\atsiv.exe"
--f "C:\Program Files\SweetLow\hidusbfp.sys"
-```
-Second entry. Replace VID_093A with right one we found early
+Edit second entry. Replace **VID_093A** with right one we found early
 ```sh
 "C:\Program Files\SweetLow\devcon.exe"
 restart *VID_093A*
 ```
 Restart PC or run this task with right click
-
-## Restore original driver
-Run extra\Setup.exe. Check filter on device + rates. Press Install, restart , close.
-
-![N|Solid](https://lh3.googleusercontent.com/-WWuhlwyKfaw/WwFnHOKY1VI/AAAAAAAAVmo/13iLo6kUBecCL9QtZ8fTL9SN3FQCRnDKgCHMYCw/s0/Setup_2018-05-20_15-16-26.png)
 
 ## Test
 Run extra/mouserate.exe
