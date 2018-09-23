@@ -20,24 +20,17 @@ hidusbf to install non patched driver http://www.overclock.net/attachments/45829
 
 # Install
 ## eXtract
-Unzip files from MAIN folder to "C:\Program Files\SweetLow"
+Unzip files from MAIN folder to "C:\Program Files\atsiv"
 
 ![N|Solid](https://lh3.googleusercontent.com/-aYz796WNAqk/WwFjGJ5EwZI/AAAAAAAAVmQ/Se8QIPd4snsHYrmnUK5C2mrgYJvCG9fzwCHMYCw/s0/explorer_2018-05-20_14-59-17.png)
 
-## Get mouse ID (method 1)
+## Get mouse ID
 So we can use it to restart mouse. Open Powershell with admin rights
 ```sh
-cd "C:\Program Files\SweetLow"
+cd "C:\Program Files\atsiv"
 .\devcon.exe find *mouse*
 ```
 ![N|Solid](https://lh3.googleusercontent.com/-o-2Pp52L-2I/WwFkICAmTiI/AAAAAAAAVmY/cYIYEs8hSeMI1ulv6xLB2SuRdWWqESSTQCHMYCw/s0/powershell_2018-05-20_15-03-40.png)
-
-My ID is VID_093A
-
-## Get mouse ID (method 2)
-Open device manager mouse properties
-
-![N|Solid](https://lh3.googleusercontent.com/-NFZY-e8tuf0/WwFt5I-6o_I/AAAAAAAAVnc/MBQvUf_SZ1QnSh03lPaF8_klcLP6TYwVgCHMYCw/s0/mmc_2018-05-20_15-45-19.png)
 
 My ID is VID_093A
 
@@ -52,7 +45,7 @@ We need to patch driver on every windows boot. Open task scheduler and import ta
 
 Edit second entry. Replace **VID_093A** with right one we found early
 ```sh
-"C:\Program Files\SweetLow\devcon.exe"
+"C:\Program Files\atsiv\devcon.exe"
 restart *VID_093A*
 ```
 Restart PC or run this task with right click
