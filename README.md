@@ -1,5 +1,5 @@
 # Intro
-Tested on Windows 10 x64 17134.48 build. Doesnt require test mode.
+Tested on Windows 10 x64 17763.195 build. Doesnt require test mode. My cheap oklick 125M works fine @ 1000hz but not regular one A4tech X-710bk ;) Capped at 500hz, fine by me
 
 # Why
 Old mouse with no native 1000hz support within official drivers
